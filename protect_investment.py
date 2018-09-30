@@ -18,7 +18,8 @@ from email.mime.text import MIMEText
 #notify function when called with a mail subject and body will send a mail to pre-def list of users
 def notify(mailsub, mailbody):
     fromaddr = "kdeepu@gmail.com"
-    toaddr = ['netmaildeepak@gmail.com', 'Leslie.Joseph@gmail.com', 'Rohit_chauhan@yahoo.com']
+    #toaddr = ['netmaildeepak@gmail.com', 'Leslie.Joseph@gmail.com', 'Rohit_chauhan@yahoo.com']
+    toaddr = ['netmaildeepak@gmail.com']
     msg = MIMEMultipart()
     msg['From'] = fromaddr
     msg['To'] = ", ".join(toaddr)
@@ -66,7 +67,7 @@ def notifyReview(df):
 today = date.today() 
 backdate = today - BDay(4)
 backdate = backdate.date()
-path = '/Users/deepak.ppe/Google Drive/PyProj/finminion'
+path = '/home/deepak/finminion'
 
 #loaddata
 invested_stocks = pd.read_csv(path + '/invested_stocks.csv', index_col = 0)
@@ -102,7 +103,7 @@ for index, row in invested_stocks.iterrows() :
 sell_trigger.to_csv('sell_trigger.csv')
 
 # Call notify review function to check if there is any review worthy stock
-#notifyReview(sell_trigger)
+notifyReview(sell_trigger)
 
 # print(sell_trigger)
 
