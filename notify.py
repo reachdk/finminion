@@ -26,7 +26,7 @@ msg.attach(MIMEText(body, 'plain'))
 
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
-server.login(fromaddr, "vW4AJPu7u1wk")
+server.login(fromaddr, "<login>")
 text = msg.as_string()
 msg = "Notification mail via Python"
 server.sendmail(fromaddr, toaddr, text)
